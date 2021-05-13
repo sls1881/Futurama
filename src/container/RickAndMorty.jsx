@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Spinner from '../components/Spinner';
-import EpisodeList from '../episodes/EpisodeList';
+import EpisodeList from '../components/episodes/EpisodeList';
 import { getEpisodes } from '../services/RickAndMortyApi';
 
 export default class RickAndMorty extends Component {
@@ -21,8 +21,8 @@ export default class RickAndMorty extends Component {
     const { loading, episodes } = this.state;
     return (
       <div>
-        {loading === 'true' && <Spinner />}
-        {loading === 'false' && <EpisodeList episodes={episodes} />}
+        {loading === true && <Spinner />}
+        {loading === false && <EpisodeList episodes={episodes} />}
       </div>
     );
   }

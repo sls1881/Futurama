@@ -7,7 +7,7 @@ function EpisodeItem({ name, date, characters, image }) {
       <h1>Rick and Morty Episodes</h1>
       <h3>{name}</h3>
       <p>{date}</p>
-      <image alt={name} src={image} />
+      <img alt={name} src={image} />
       <ul>
         <li>{characters}</li>
       </ul>
@@ -15,7 +15,7 @@ function EpisodeItem({ name, date, characters, image }) {
   );
 }
 
-EpisodeList.propTypes = {
+EpisodeItem.propTypes = {
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   characters: PropTypes.array.isRequired,

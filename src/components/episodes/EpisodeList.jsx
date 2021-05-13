@@ -5,16 +5,16 @@ import EpisodeItem from './EpisodeItem';
 function EpisodeList({ episodes }) {
   return (
     <ul aria-label="episodes">
-      {episodes.map((episode) => {
-        <li>
+      {episodes.map((episode) => (
+        <li key={episode.id}>
           <EpisodeItem
-            name={name}
-            date={date}
-            characters={characters}
-            image={image}
+            name={episode.name}
+            date={episode.date}
+            characters={episode.characters}
+            image={episode.image}
           />
-        </li>;
-      })}
+        </li>
+      ))}
     </ul>
   );
 }
@@ -22,6 +22,7 @@ function EpisodeList({ episodes }) {
 EpisodeList.propTypes = {
   episodes: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
