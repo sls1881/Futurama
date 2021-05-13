@@ -1,1 +1,1 @@
-# Futurama
+# Rick and Morty
