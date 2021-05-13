@@ -9,8 +9,23 @@ export const getEpisodes = async () => {
     name,
     date: air_date,
     characters,
-    image: url,
+    link: url,
   }));
 };
 
 //Get episode by ID
+export const getEpisode = async (id) => {
+  const res = await fetch(`https://rickandmortyapi.com/api/episode/${id}`);
+
+  const episode = await res.json();
+
+  return [
+    {
+      id: episode.id,
+      name: episode.name,
+      date: episode.air_date,
+      characters: episode.characters,
+      link: episode.url,
+    },
+  ];
+};

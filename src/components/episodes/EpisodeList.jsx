@@ -5,13 +5,13 @@ import EpisodeItem from './EpisodeItem';
 function EpisodeList({ episodes }) {
   return (
     <ul aria-label="episodes">
-      {episodes.map((episode) => (
-        <li key={episode.id}>
+      {episodes.map(({ id, name, date, characters, link }) => (
+        <li key={id}>
           <EpisodeItem
-            name={episode.name}
-            date={episode.date}
-            characters={episode.characters}
-            image={episode.image}
+            name={name}
+            date={date}
+            characters={characters}
+            link={link}
           />
         </li>
       ))}
@@ -25,7 +25,7 @@ EpisodeList.propTypes = {
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
       characters: PropTypes.array.isRequired,
     })
   ).isRequired,

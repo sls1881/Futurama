@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function EpisodeItem({ name, date, characters, image }) {
+function EpisodeItem({ name, date, characters, link }) {
   return (
     <div>
-      <h1>Rick and Morty Episodes</h1>
       <h3>{name}</h3>
       <p>{date}</p>
-      <img alt={name} src={image} />
+      <a href={link}>
+        <p>{link}</p>
+      </a>
       <ul>
         <li>{characters}</li>
       </ul>
@@ -19,7 +20,7 @@ EpisodeItem.propTypes = {
   name: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   characters: PropTypes.array.isRequired,
-  image: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default EpisodeItem;
