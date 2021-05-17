@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import RickAndMorty from './RickAndMorty';
 
 describe('Rick and Morty', () => {
-  it('Searches and renders character data', async () => {
+  it.skip('Searches and renders character data', async () => {
     render(<RickAndMorty />);
 
     screen.getByAltText('spinner');
